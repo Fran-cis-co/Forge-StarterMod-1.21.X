@@ -1,6 +1,7 @@
 package net.fcontr.tutorialmod.item;
 
 import net.fcontr.tutorialmod.TutorialMod;
+import net.fcontr.tutorialmod.block.ModBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -22,9 +23,11 @@ public class ModCreativeModeTabs {
                         // Adding custom items to the new creative mode tab
                         pOutput.accept(ModItems.SAPPHIRE.get());
                         pOutput.accept(ModItems.RAW_SAPPHIRE.get());
-
                         // Adding vanilla items to the tab
                         pOutput.accept(Items.DIAMOND);
+                        // Adding custom blocks
+                        pOutput.accept(ModBlocks.SAPPHIRE_BLOCK.get());
+                        pOutput.accept(ModBlocks.RAW_SAPPHIRE_BLOCK.get());
                     })
                     .build());
 

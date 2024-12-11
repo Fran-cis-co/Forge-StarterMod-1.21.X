@@ -1,6 +1,7 @@
 package net.fcontr.tutorialmod;
 
 import com.mojang.logging.LogUtils;
+import net.fcontr.tutorialmod.block.ModBlocks;
 import net.fcontr.tutorialmod.item.ModCreativeModeTabs;
 import net.fcontr.tutorialmod.item.ModItems;
 import net.minecraft.world.item.CreativeModeTab;
@@ -31,8 +32,9 @@ public class TutorialMod {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ModCreativeModeTabs.register(modEventBus);
-
+        // Register the modded items
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
