@@ -31,6 +31,9 @@ public class ModCreativeModeTabs {
                         // adding ore blockk
                         pOutput.accept(ModBlocks.SAPPHIRE_ORE.get());
                         pOutput.accept(ModItems.METAL_DETECTOR.get());
+
+                        // adding sound block
+                        pOutput.accept(ModBlocks.SOUND_BLOCK.get());
                     })
                     .build());
 
