@@ -34,6 +34,9 @@ public class ModCreativeModeTabs {
 
                         // adding sound block
                         pOutput.accept(ModBlocks.SOUND_BLOCK.get());
+
+                        // adding strawberry food
+                        pOutput.accept(ModItems.STRAWBERRY.get());
                     })
                     .build());
 
