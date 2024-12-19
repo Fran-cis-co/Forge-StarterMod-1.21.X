@@ -1,6 +1,7 @@
 package net.fcontr.tutorialmod.item;
 
 import net.fcontr.tutorialmod.TutorialMod;
+import net.fcontr.tutorialmod.item.custom.FuelItem;
 import net.fcontr.tutorialmod.item.custom.MetalDetectorItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -24,6 +25,12 @@ public class ModItems {
     // Custom food item
     public static final RegistryObject<Item> STRAWBERRY = ITEMS.register("strawberry",
             () -> new Item(new Item.Properties().food(ModFoods.STRAWBERRY)));
+
+    // Custom fuel item
+    // burnTime is 20 seconds
+    // 20 ticks == 1 second
+    public static final RegistryObject<Item> PINE_CONE = ITEMS.register("pine_cone",
+            () -> new FuelItem(new Item.Properties(), 400));
 
     public static void register(IEventBus eventbus) {
         ITEMS.register(eventbus);

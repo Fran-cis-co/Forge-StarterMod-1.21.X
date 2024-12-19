@@ -37,6 +37,8 @@ public class ModCreativeModeTabs {
 
                         // adding strawberry food
                         pOutput.accept(ModItems.STRAWBERRY.get());
+                        // adding pine cone fuel item
+                        pOutput.accept(ModItems.PINE_CONE.get());
                     })
                     .build());
 
