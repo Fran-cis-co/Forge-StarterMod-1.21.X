@@ -8,10 +8,14 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
+
+import java.util.List;
 
 /*
 Metal Detector Custom Item:
@@ -62,6 +66,14 @@ public class MetalDetectorItem extends Item {
 
 
         return InteractionResult.SUCCESS;
+    }
+
+
+    @Override
+    public void appendHoverText(ItemStack pStack, TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pTooltipFlag) {
+        // the translatable function is used when we want to have this be translated into the en_us json file
+        pTooltipComponents.add(Component.translatable("tooltip.tutorialmod.metal_detector.tooltip"));
+        super.appendHoverText(pStack, pContext, pTooltipComponents, pTooltipFlag);
     }
 
     // Method which prints out the coordinates of where the ore is. This gets sent to the in-game chat
