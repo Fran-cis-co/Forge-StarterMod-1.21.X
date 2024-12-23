@@ -1,5 +1,6 @@
 package net.fcontr.tutorialmod.item.custom;
 
+import net.fcontr.tutorialmod.util.ModTags;
 import net.minecraft.client.resources.language.I18n;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
@@ -84,6 +85,7 @@ public class MetalDetectorItem extends Item {
 
     // Method which returns if the metal detector detects iron ore or diamond ore at the bottom
     private boolean isValuableBlock(BlockState state) {
-        return state.is(Blocks.IRON_ORE) || state.is(Blocks.DIAMOND_ORE);
+        // We use a custom tag now that way instead of finding only diamond and iron ore, we can find any vanilla ore along with sapphire ore
+        return state.is(ModTags.Blocks.METAL_DETECTOR_VALUABLES);
     }
 }
