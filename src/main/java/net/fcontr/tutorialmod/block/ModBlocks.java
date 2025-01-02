@@ -1,11 +1,13 @@
 package net.fcontr.tutorialmod.block;
 
 import net.fcontr.tutorialmod.TutorialMod;
+import net.fcontr.tutorialmod.block.custom.LampBlock;
 import net.fcontr.tutorialmod.block.custom.SoundBlock;
 import net.fcontr.tutorialmod.item.ModItems;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.CustomSpawner;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.DropExperienceBlock;
@@ -37,6 +39,15 @@ public class ModBlocks {
     // Creating custom sound block
     public static final RegistryObject<Block> SOUND_BLOCK = registerBlock("sound_block",
             () -> new SoundBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK)));
+
+    /*
+    *  Create custom lamp
+    *  set the brightness of the lamp
+    *  along with determining if the button is clicked or not which determines the range the light will go
+    * */
+    public static final RegistryObject<Block> CUSTOM_LAMP = registerBlock("custom_lamp",
+            () -> new LampBlock(BlockBehaviour.Properties.of().strength(3f)
+                    .lightLevel(state -> state.getValue(LampBlock.CLICKED) ? 15 : 0)));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block){
         RegistryObject<T> toReturn = BLOCKS.register(name, block); // register the block

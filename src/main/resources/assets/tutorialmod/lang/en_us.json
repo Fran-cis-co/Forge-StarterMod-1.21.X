@@ -9,10 +9,11 @@
   "block.tutorialmod.raw_sapphire_block": "Block of Raw Sapphire",
   "block.tutorialmod.sapphire_ore": "Sapphire Ore",
   "block.tutorialmod.sound_block": "Sound Block",
+  "block.tutorialmod.custom_lamp": "Custom Lamp",
 
   "creativetab.tutorial_tab": "Sapphire Tab",
 
-  "tooltip.tutorialmod.metal_detector.tooltip": "Finds valuables underground"
+  "tooltip.tutorialmod.metal_detector.tooltip": "Finds valuables underground",
 }
 
 

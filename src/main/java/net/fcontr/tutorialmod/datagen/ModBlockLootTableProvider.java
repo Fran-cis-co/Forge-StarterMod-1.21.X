@@ -33,6 +33,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.SAPPHIRE_BLOCK.get());
         dropSelf(ModBlocks.RAW_SAPPHIRE_BLOCK.get());
         dropSelf(ModBlocks.SOUND_BLOCK.get());
+        dropSelf(ModBlocks.CUSTOM_LAMP.get());
 
         // call the createoredrop function whenever the block should drop an ore instead of the block itself
         // however, for this case we created a helper method which we put in custom parameters into to customize the loot table for an ore drop

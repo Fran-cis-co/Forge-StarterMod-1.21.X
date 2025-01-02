@@ -30,6 +30,8 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModBlocks.RAW_SAPPHIRE_BLOCK.get());
                         // adding ore blockk
                         pOutput.accept(ModBlocks.SAPPHIRE_ORE.get());
+                        // adding custom lamp
+                        pOutput.accept(ModBlocks.CUSTOM_LAMP.get());
                         pOutput.accept(ModItems.METAL_DETECTOR.get());
 
                         // adding sound block
@@ -39,6 +41,7 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModItems.STRAWBERRY.get());
                         // adding pine cone fuel item
                         pOutput.accept(ModItems.PINE_CONE.get());
+
                     })
                     .build());
 
