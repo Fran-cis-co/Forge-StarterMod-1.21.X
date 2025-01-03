@@ -2,11 +2,15 @@ package net.fcontr.tutorialmod.datagen;
 
 import net.fcontr.tutorialmod.TutorialMod;
 import net.fcontr.tutorialmod.block.ModBlocks;
+import net.fcontr.tutorialmod.util.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.concurrent.CompletableFuture;
@@ -33,5 +37,11 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         // let the sapphire block be mineable with a diamond tool (pickaxe)
         tag(BlockTags.NEEDS_DIAMOND_TOOL)
                 .add(ModBlocks.SAPPHIRE_BLOCK.get());
+
+        // generate json file which stores the valuables the metal detector can detect
+        this.tag(ModTags.Blocks.METAL_DETECTOR_VALUABLES)
+                .add(ModBlocks.SAPPHIRE_ORE.get())
+                .addTag(BlockTags.DIAMOND_ORES);
+
     }
 }

@@ -2,6 +2,7 @@ package net.fcontr.tutorialmod;
 
 import com.mojang.logging.LogUtils;
 import net.fcontr.tutorialmod.block.ModBlocks;
+import net.fcontr.tutorialmod.component.ModDataComponentTypes;
 import net.fcontr.tutorialmod.item.ModCreativeModeTabs;
 import net.fcontr.tutorialmod.item.ModItems;
 import net.minecraft.world.item.CreativeModeTab;
@@ -41,7 +42,7 @@ public class TutorialMod {
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
 
-
+        ModDataComponentTypes.register(modEventBus);
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
         // Register our mod's ForgeConfigSpec so that Forge can create and load the config file for us

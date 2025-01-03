@@ -1,5 +1,6 @@
 package net.fcontr.tutorialmod.item.custom;
 
+import net.fcontr.tutorialmod.component.ModDataComponentTypes;
 import net.fcontr.tutorialmod.util.ModTags;
 import net.minecraft.client.resources.language.I18n;
 import net.minecraft.core.BlockPos;
@@ -41,6 +42,7 @@ public class MetalDetectorItem extends Item {
             Player player = pContext.getPlayer();
             boolean foundBlock = false;
 
+
             // Metal detector goes through every single y level until bedrock to detect desired ore
             for(int i = 0; i <= positionClicked.getY() + 64; i++){
                 BlockState state = pContext.getLevel().getBlockState(positionClicked.below(i));
@@ -57,6 +59,9 @@ public class MetalDetectorItem extends Item {
             if(!foundBlock) {
                 player.sendSystemMessage(Component.literal("No Valuables Found!"));
             }
+
+            // use data component class to grab the coordinates of where the user right clicked
+            pContext.getItemInHand().set(ModDataComponentTypes.COORDINATES.get(), pContext.getClickedPos());
         }
 
 //        pContext.getItemInHand().hurtAndBreak(1, pContext.getPlayer(),
@@ -73,7 +78,13 @@ public class MetalDetectorItem extends Item {
     @Override
     public void appendHoverText(ItemStack pStack, TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pTooltipFlag) {
         // the translatable function is used when we want to have this be translated into the en_us json file
-        pTooltipComponents.add(Component.translatable("tooltip.tutorialmod.metal_detector.tooltip"));
+        pTooltipComponents.add(Component.translatable("Look for valuable items!"));
+
+        // add the last block coordinate the user right clicked on onto the tooltip
+        if(pStack.get(ModDataComponentTypes.COORDINATES.get()) != null) {
+            pTooltipComponents.add(Component.literal("Last Column Scanned at: " + pStack.get(ModDataComponentTypes.COORDINATES.get())));
+        }
+
         super.appendHoverText(pStack, pContext, pTooltipComponents, pTooltipFlag);
     }
 
