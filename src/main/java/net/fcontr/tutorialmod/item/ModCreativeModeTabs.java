@@ -42,6 +42,13 @@ public class ModCreativeModeTabs {
                         // adding pine cone fuel item
                         pOutput.accept(ModItems.PINE_CONE.get());
 
+                        // ---- Register the modded tools into the creative tab ---
+                        pOutput.accept(ModItems.ALEXANDRITE_SWORD.get());
+                        pOutput.accept(ModItems.ALEXANDRITE_AXE.get());
+                        pOutput.accept(ModItems.ALEXANDRITE_HOE.get());
+                        pOutput.accept(ModItems.ALEXANDRITE_PICKAXE.get());
+                        pOutput.accept(ModItems.ALEXANDRITE_SHOVEL.get());
+
                     })
                     .build());
 

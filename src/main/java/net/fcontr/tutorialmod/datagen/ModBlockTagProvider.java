@@ -43,5 +43,14 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.SAPPHIRE_ORE.get())
                 .addTag(BlockTags.DIAMOND_ORES);
 
+        tag(ModTags.Blocks.NEEDS_ALEXANDRITE_TOOL)
+                .add(ModBlocks.RAW_SAPPHIRE_BLOCK.get())
+                .add(Blocks.OBSIDIAN)
+                .addTags(BlockTags.NEEDS_IRON_TOOL);
+
+        tag(ModTags.Blocks.INCORRECT_FOR_ALEXANDRITE_TOOL)
+                .addTags(BlockTags.INCORRECT_FOR_IRON_TOOL)
+                .remove(ModTags.Blocks.NEEDS_ALEXANDRITE_TOOL);
+
     }
 }
