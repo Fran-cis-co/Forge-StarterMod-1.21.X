@@ -28,6 +28,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.ALEXANDRITE_PICKAXE);
         handheldItem(ModItems.ALEXANDRITE_SHOVEL);
         handheldItem(ModItems.ALEXANDRITE_SWORD);
+        handheldItem(ModItems.ALEXANDRITE_HAMMER);
     }
 
     private ItemModelBuilder handheldItem(RegistryObject<Item> item) {
