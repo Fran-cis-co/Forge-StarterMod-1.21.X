@@ -9,6 +9,7 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.fml.common.Mod;
@@ -23,6 +24,11 @@ public class ModItemTagProvider extends ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider pProvider) {
+        tag(ItemTags.TRIMMABLE_ARMOR)
+                .add(ModItems.ALEXANDRITE_HELMET.get())
+                .add(ModItems.ALEXANDRITE_CHESTPLATE.get())
+                .add(ModItems.ALEXANDRITE_LEGGINGS.get())
+                .add(ModItems.ALEXANDRITE_BOOTS.get());
     }
 
 }

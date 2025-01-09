@@ -50,6 +50,12 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModItems.ALEXANDRITE_SHOVEL.get());
                         pOutput.accept(ModItems.ALEXANDRITE_HAMMER.get());
 
+                        // ---- Register the modded armor into the creative tab ---
+                        pOutput.accept(ModItems.ALEXANDRITE_HELMET.get());
+                        pOutput.accept(ModItems.ALEXANDRITE_CHESTPLATE.get());
+                        pOutput.accept(ModItems.ALEXANDRITE_LEGGINGS.get());
+                        pOutput.accept(ModItems.ALEXANDRITE_BOOTS.get());
+
                     })
                     .build());
 
