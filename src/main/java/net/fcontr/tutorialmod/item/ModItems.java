@@ -4,6 +4,7 @@ import net.fcontr.tutorialmod.TutorialMod;
 import net.fcontr.tutorialmod.item.custom.FuelItem;
 import net.fcontr.tutorialmod.item.custom.HammerItem;
 import net.fcontr.tutorialmod.item.custom.MetalDetectorItem;
+import net.fcontr.tutorialmod.item.custom.ModArmorItem;
 import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -54,7 +55,7 @@ public class ModItems {
 
     // ----- Register the custom armor -----
     public static final RegistryObject<Item> ALEXANDRITE_HELMET = ITEMS.register("alexandrite_helmet",
-            () -> new ArmorItem(ModArmorMaterials.ALEXANDRITE_ARMOR_MATERIAL, ArmorItem.Type.HELMET,
+            () -> new ModArmorItem(ModArmorMaterials.ALEXANDRITE_ARMOR_MATERIAL, ArmorItem.Type.HELMET,
                     new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(18))));
 
     public static final RegistryObject<Item> ALEXANDRITE_CHESTPLATE = ITEMS.register("alexandrite_chestplate",
