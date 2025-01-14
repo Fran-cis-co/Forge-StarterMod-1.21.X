@@ -56,6 +56,9 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModItems.ALEXANDRITE_LEGGINGS.get());
                         pOutput.accept(ModItems.ALEXANDRITE_BOOTS.get());
 
+                        // Register the horse armor
+                        pOutput.accept(ModItems.ALEXANDRITE_HORSE_ARMOR.get());
+
                     })
                     .build());
 
