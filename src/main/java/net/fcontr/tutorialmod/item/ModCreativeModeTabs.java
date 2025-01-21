@@ -59,6 +59,9 @@ public class ModCreativeModeTabs {
                         // Register the horse armor
                         pOutput.accept(ModItems.ALEXANDRITE_HORSE_ARMOR.get());
 
+                        // Register smithing template
+                        pOutput.accept(ModItems.KAUPEN_SMITHING_TEMPLATE.get());
+
                     })
                     .build());
 

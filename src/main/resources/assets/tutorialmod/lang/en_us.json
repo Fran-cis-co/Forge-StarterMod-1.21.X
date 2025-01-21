@@ -19,6 +19,8 @@
 
   "item.tutorialmod.alexandrite_horse_armor": "Alexandrite Horse Armor",
 
+  "item.tutorialmod.kaupen_armor_trim_smithing_template": "Kaupen Trim Template",
+
   "block.tutorialmod.sapphire_block": "Block of Sapphire",
   "block.tutorialmod.raw_sapphire_block": "Block of Raw Sapphire",
   "block.tutorialmod.sapphire_ore": "Sapphire Ore",
@@ -27,7 +29,10 @@
 
   "creativetab.tutorial_tab": "Sapphire Tab",
 
-  "tooltip.tutorialmod.metal_detector.tooltip": "Finds valuables underground"
+  "tooltip.tutorialmod.metal_detector.tooltip": "Finds valuables underground",
+
+  "trim_pattern.tutorialmod.kaupen": "Kaupen Armor Trim",
+  "trim_material.tutorialmod.alexandrite": "Sapphire Material"
 }
 
 

@@ -38,5 +38,7 @@ public class DataGenerators {
         // generate json files for item and block models
         generator.addProvider(event.includeClient(), new ModItemModelProvider(packOutput, existingFileHelper));
         generator.addProvider(event.includeClient(), new ModBlockStateProvider(packOutput, existingFileHelper));
+
+        generator.addProvider(event.includeServer(), new ModDataPackEntries(packOutput, lookupProvider));
     }
 }
