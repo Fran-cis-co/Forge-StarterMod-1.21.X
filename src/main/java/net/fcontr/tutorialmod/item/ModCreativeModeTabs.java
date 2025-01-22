@@ -62,6 +62,9 @@ public class ModCreativeModeTabs {
                         // Register smithing template
                         pOutput.accept(ModItems.KAUPEN_SMITHING_TEMPLATE.get());
 
+                        // Register custom bow
+                        pOutput.accept(ModItems.KAUPEN_BOW.get());
+
                     })
                     .build());
 

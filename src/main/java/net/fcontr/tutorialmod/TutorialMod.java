@@ -5,6 +5,7 @@ import net.fcontr.tutorialmod.block.ModBlocks;
 import net.fcontr.tutorialmod.component.ModDataComponentTypes;
 import net.fcontr.tutorialmod.item.ModCreativeModeTabs;
 import net.fcontr.tutorialmod.item.ModItems;
+import net.fcontr.tutorialmod.util.ModItemProperties;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
@@ -20,6 +21,12 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
+
+/*
+*   Videos that need to be done:
+*   Ep 6
+*   Ep 21
+*/
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(TutorialMod.MOD_ID)
@@ -72,7 +79,7 @@ public class TutorialMod {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-
+            ModItemProperties.addCustomItemProperties();
         }
     }
 }
