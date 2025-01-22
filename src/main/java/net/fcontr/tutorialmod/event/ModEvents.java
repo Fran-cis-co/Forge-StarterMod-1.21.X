@@ -3,9 +3,15 @@ package net.fcontr.tutorialmod.event;
 import net.fcontr.tutorialmod.TutorialMod;
 import net.fcontr.tutorialmod.item.custom.HammerItem;
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.animal.Sheep;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.event.level.BlockEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -48,6 +54,25 @@ public class ModEvents {
                 HARVESTED_BLOCKS.add(pos);
                 serverPlayer.gameMode.destroyBlock(pos);
                 HARVESTED_BLOCKS.remove(pos);
+            }
+        }
+    }
+
+    // Custom event to understand events
+    @SubscribeEvent
+    public static void onLivingDamage(LivingDamageEvent event){
+        // This event triggers when a living entity is about to take damage.
+        // For this case, we want to make sure the entity is a sheep and the player is the one doing damage
+        if(event.getEntity() instanceof Sheep sheep && event.getSource().getDirectEntity() instanceof Player player) {
+
+            /*
+            *   If the player is holding an end rod in their hand while holding the sheep then send a message in the
+            *   in-game chat along with poisoning the sheep. Remove an end rod after
+            */
+            if(player.getMainHandItem().getItem() == Items.END_ROD) {
+                player.sendSystemMessage(Component.literal(player.getName().getString() + " just hit a sheep."));
+                sheep.addEffect(new MobEffectInstance(MobEffects.POISON, 600, 6));
+                player.getMainHandItem().shrink(1);
             }
         }
     }
