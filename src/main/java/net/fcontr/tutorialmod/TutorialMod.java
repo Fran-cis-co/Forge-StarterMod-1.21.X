@@ -5,6 +5,7 @@ import net.fcontr.tutorialmod.block.ModBlocks;
 import net.fcontr.tutorialmod.component.ModDataComponentTypes;
 import net.fcontr.tutorialmod.item.ModCreativeModeTabs;
 import net.fcontr.tutorialmod.item.ModItems;
+import net.fcontr.tutorialmod.sound.ModSounds;
 import net.fcontr.tutorialmod.util.ModItemProperties;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -50,6 +51,7 @@ public class TutorialMod {
         MinecraftForge.EVENT_BUS.register(this);
 
         ModDataComponentTypes.register(modEventBus);
+        ModSounds.register(modEventBus);
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
         // Register our mod's ForgeConfigSpec so that Forge can create and load the config file for us

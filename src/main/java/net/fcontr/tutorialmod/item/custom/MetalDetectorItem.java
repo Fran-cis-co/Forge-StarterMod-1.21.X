@@ -1,10 +1,13 @@
 package net.fcontr.tutorialmod.item.custom;
 
 import net.fcontr.tutorialmod.component.ModDataComponentTypes;
+import net.fcontr.tutorialmod.sound.ModSounds;
 import net.fcontr.tutorialmod.util.ModTags;
 import net.minecraft.client.resources.language.I18n;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -13,6 +16,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.UseOnContext;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
@@ -40,8 +44,11 @@ public class MetalDetectorItem extends Item {
         if(!pContext.getLevel().isClientSide()){
             BlockPos positionClicked = pContext.getClickedPos();
             Player player = pContext.getPlayer();
+            Level level = pContext.getLevel();
             boolean foundBlock = false;
 
+            // Code used to play a sound event when the metal detector is getting used
+            level.playSound(null, pContext.getClickedPos(), ModSounds.DETECTOR_USE.get(), SoundSource.BLOCKS);
 
             // Metal detector goes through every single y level until bedrock to detect desired ore
             for(int i = 0; i <= positionClicked.getY() + 64; i++){

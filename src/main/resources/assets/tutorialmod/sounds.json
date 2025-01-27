@@ -1,0 +1,8 @@
+{
+  "detector_use": {
+    "subtitle": "sounds.tutorialmod.detector_use",
+    "sounds": [
+      "tutorialmod:detector_use"
+    ]
+  }
+}
